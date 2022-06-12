@@ -4,7 +4,8 @@
     /* exported handleAuthClick */
     /* exported handleSignoutClick */
 
-    // TODO(developer): Set to client ID and API key from the Developer Console
+    // TODO(developer): Set to client ID and API key from the Developer Console 
+    //see readme file
     const CLIENT_ID = 'your_client_id';
     const API_KEY = 'your_api_key';
 
