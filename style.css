@@ -1,0 +1,52 @@
+
+#loader {
+  display: flex;
+}
+#header {
+  box-shadow: rgb(39 39 51 / 4%) 1px 1px 2px 1px;
+  background: rgb(255, 255, 255);
+  top: 0;
+  z-index: 5;
+}
+#selectDateForm {
+  max-width: 368px;
+} 
+#EventData {
+  display: none;
+}
+.font-18 {
+  font-size:18px;
+}
+.signinBtns {
+  border: 1px solid #93795d;
+}
+.signinBtns:hover {
+  background:#93795d!important;
+  color: white;
+}
+.border-primary {
+  border-color: #93795d!important;
+}
+.text-primary {
+  color: #93795d!important;
+}
+.bg-primary {
+    background-color: #93795d!important;
+  }
+.nav-link {
+  color: #93795d;
+  font-weight: 700;
+}
+#mainWrapper {
+  margin-top: 100px;
+}
+#event_dates {
+    max-width :368px;
+}
+::-webkit-scrollbar {
+  width: thin;
+}
+#availableTime {
+  max-height: 90vh; 
+  overflow-y: auto;
+}

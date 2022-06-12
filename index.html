@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Housetable Renovation Loans</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section class="position-fixed w-100 h-100  align-items-center justify-content-center bg-white"
+    style="z-index: 9; top:0;" id="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </section>
+  <section class="py-2 shadow position-fixed w-100" id="header">
+    <nav class="navbar navbar-expand-lg px-3">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><img
+            src="https://assets.website-files.com/61c1f2cd3de869dd6f44cebe/61dd4536f96feb46ea0247c2_Group%201330.svg"
+            loading="lazy" width="137" alt="" class="image"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link  mx-lg-4" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link btn rounded-pill px-5  mx-lg-4 signinBtns" id="authorize_button" aria-current="page"
+                href="#" onclick="handleAuthClick()">Sign In</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link   btn rounded-pill px-5  mx-lg-4 signinBtns" id="signout_button" aria-current="page"
+                href="#" onclick="handleSignoutClick()">Sign Out</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <section id="mainWrapper">
+    <div class="container">
+      <p class="my-5 border-2 border-primary p-3 card shadow" style="width: fit-content;" id="signMsg">Please sign in to
+        continue.......</p>
+      <div class="my-3" id="EventData">
+        <div class="row">
+          <div class="col-md-8 px-4">
+            <div class="w-100  my-md-5 my-3">
+              <div class=" align-items-center mb-3">
+                <p class="h5  me-4">Event List: </p>
+              </div>
+              <form action="" id="event_dates">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="" class="mb-1">Start Date</label>
+                    <input type="date" class="form-control " id="startDate" aria-describedby="emailHelp" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="" class="mb-1">End Date</label>
+                    <input type="date" class="form-control " id="endDate" aria-describedby="emailHelp" required>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="" class="mb-1">Length</label>
+                    <select class="form-select" aria-label="Default select example" id="freeTimeLength" required>
+                      <option value="" selected disabled>Select</option>
+                      <option value="15">15 mins</option>
+                      <option value="30">30 mins</option>
+                      <option value="45">45 mins</option>
+                      <option value="60">60 mins</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="" class="mb-1">Start time</label>
+                    <select class="form-select" aria-label="Default select example" id="startTime" required>
+                      <option value="" selected disabled>Select</option>
+                      <option value="9">9am</option>
+                      <option value="10">10am</option>
+                      <option value="11">11am</option>
+                      <option value="12">12pm</option>
+                      <option value="13">1pm</option>
+                      <option value="14">2pm</option>
+                      <option value="15">3pm</option>
+                      <option value="16">4pm</option>
+                      <option value="17">5pm</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4   mb-3">
+                    <label for="" class="mb-1">End time</label>
+                    <select class="form-select" aria-label="Default select example" id="endTime" required>
+                      <option value="" selected disabled>Select</option>
+                      <option value="10">10am</option>
+                      <option value="11">11am</option>
+                      <option value="12">12pm</option>
+                      <option value="13">1pm</option>
+                      <option value="14">2pm</option>
+                      <option value="15">3pm</option>
+                      <option value="16">4pm</option>
+                      <option value="17">5pm</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="text-end">
+                  <button class="btn bg-primary text-white" type="submit">See
+                    Events</button>
+                </div>
+              </form>
+            </div>
+            <!-- <pre id="content" style="white-space: pre-wrap;"></pre> -->
+            <div class="row" id="content">
+              <span>Select date to see you events.....</span>
+            </div>
+          </div>
+          <div class="col-md-4 my-md-5 my-3 px-4">
+            <div class="border card shadow border-2 p-3 border-primary">
+              <div class="h5 d-flex">
+                <div class="col-6">Available Time</div>
+                <div class="col-6 text-end text-primary">
+                  <i class="fa fa-copy" id="copyBtn" style="display:none;" type="button" onclick="copyAvailableTime()"></i>
+                </div>
+              </div>
+              <div class="" id="availableTime"> 
+                <div>Select dates to see events</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+  <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
